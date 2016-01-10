@@ -29,9 +29,10 @@ import Data.Text (Text)
 -- Pandoc
 import Text.Pandoc.Definition
 import Text.Pandoc.Walk
-import Text.Pandoc.Shared (stringify)
 -- shortcut-links
 import ShortcutLinks
+-- local
+import Text.Pandoc.Filters.Utils
 
 
 shortcutLinks :: Inline -> IO Inline
