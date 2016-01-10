@@ -18,9 +18,24 @@ Source-repository head
   location:      git://github.com/aelve/pandoc-contrib.git
 
 library
-  -- exposed-modules:     
+  exposed-modules:     Text.Pandoc.Filters.ShortcutLinks
   -- other-modules:       
   -- other-extensions:    
-  build-depends:       base >=4.5 && <4.9
+  build-depends:       base >= 4.5 && < 4.9
+                     , pandoc >= 1.13 && < 1.16
+                     , pandoc-types
+                     , parsec >= 3
+                     , shortcut-links >= 0.4.1 && < 0.5
+                     , text
+  hs-source-dirs:      lib
+  default-language:    Haskell2010
+  buildable:           True
+
+executable pandoc-shortcut-links
+  main-is:             shortcut-links.hs
+  build-depends:       base >= 4.5 && < 4.9
+                     , pandoc-contrib
+                     , pandoc-types
   hs-source-dirs:      src
   default-language:    Haskell2010
+  buildable:           True
