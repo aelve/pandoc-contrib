@@ -9,6 +9,7 @@ author:              various
 maintainer:          various (see individual modules)
 -- copyright:           
 category:            Text
+tested-with:         GHC == 7.6.3, GHC == 7.8.4, GHC == 7.10.3
 build-type:          Simple
 extra-source-files:  README.md
 cabal-version:       >=1.10
