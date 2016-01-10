@@ -23,7 +23,7 @@ library
   -- other-modules:       
   -- other-extensions:    
   build-depends:       base >= 4.5 && < 4.9
-                     , pandoc >= 1.13 && < 1.16
+                     , pandoc >= 1.13 && < 1.17
                      , pandoc-types
                      , parsec >= 3
                      , shortcut-links >= 0.4.1 && < 0.5
