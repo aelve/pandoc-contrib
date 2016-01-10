@@ -36,7 +36,7 @@ import Text.Pandoc.Filters.Utils
 
 
 shortcutLinks :: Inline -> IO Inline
-shortcutLinks i@(Link is (url, title)) | '@':_ <- url = do
+shortcutLinks i@(Link attr is (url, title)) | '@':_ <- url = do
   -- %20s are introduced by Pandoc and needs to be converted back to spaces
   let urlOriginalT = T.replace "%20" " " (T.pack url)
       urlOriginalS = T.unpack urlOriginalT
@@ -49,12 +49,12 @@ shortcutLinks i@(Link is (url, title)) | '@':_ <- url = do
           option'   = option
           text'     = fromMaybe (T.pack (stringify is)) text
       case useShortcut shortcut' option' text' of
-        Success link -> return (Link is (T.unpack link, title))
+        Success link -> return (Link attr is (T.unpack link, title))
         Warning warnings link -> do
           printf "Warnings when processing a shortcut link (%s):\n"
                  urlOriginalS
           mapM_ putStrLn warnings
-          return (Link is (T.unpack link, title))
+          return (Link attr is (T.unpack link, title))
         Failure err -> do
           error $ printf "Error when processing a shortcut link (%s): %s\n"
                          urlOriginalS err
