@@ -1,6 +1,4 @@
-{-# LANGUAGE
-FlexibleContexts
-  #-}
+{-# LANGUAGE FlexibleContexts #-}
 
 module Text.Pandoc.Filters.Utils
 (
