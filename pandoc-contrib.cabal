@@ -22,7 +22,7 @@ library
   exposed-modules:     Text.Pandoc.Filters.ShortcutLinks
   other-modules:       Text.Pandoc.Filters.Utils
   -- other-extensions:    
-  build-depends:       base >= 4.5 && < 4.9
+  build-depends:       base >= 4.5 && < 5
                      , pandoc-types == 1.16.*
                      , parsec >= 3
                      , shortcut-links >= 0.4.1 && < 0.5
@@ -33,7 +33,7 @@ library
 
 executable pandoc-shortcut-links
   main-is:             shortcut-links.hs
-  build-depends:       base >= 4.5 && < 4.9
+  build-depends:       base >= 4.5 && < 5
                      , pandoc-contrib
                      , pandoc-types == 1.16.*
   hs-source-dirs:      src
